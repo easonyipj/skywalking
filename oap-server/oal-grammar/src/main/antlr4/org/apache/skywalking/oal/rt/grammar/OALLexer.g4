@@ -45,7 +45,14 @@ SRC_SERVICE_INSTANCE_CLR_GC: 'ServiceInstanceCLRGC';
 SRC_SERVICE_INSTANCE_CLR_THREAD: 'ServiceInstanceCLRThread';
 SRC_ENVOY_INSTANCE_METRIC: 'EnvoyInstanceMetric';
 SRC_EVENT: 'Event';
+SRC_SERVICE_INSTANCE_GOLANG_HEAP: 'ServiceInstanceGolangHeap';
 SRC_SERVICE_INSTANCE_GOLANG_STACK: 'ServiceInstanceGolangStack';
+SRC_SERVICE_INSTANCE_GOLANG_GC_NUM: 'ServiceInstanceGolangGCNum';
+SRC_SERVICE_INSTANCE_GOLANG_GC_PAUSE_TIME: 'ServiceInstanceGolangGCPauseTime';
+SRC_SERVICE_INSTANCE_GOLANG_GOROUTINE_NUM: 'ServiceInstanceGolangGoroutineNum';
+SRC_SERVICE_INSTANCE_GOLANG_THREAD_NUM: 'ServiceInstanceGolangThreadNum';
+SRC_SERVICE_INSTANCE_GOLANG_CPU_USED_RATE: 'ServiceInstanceGolangCPUUsedRate';
+SRC_SERVICE_INSTANCE_GOLANG_MEM_USED_RATE: 'ServiceInstanceGolangMemUsedRate';
 
 // Browser keywords
 SRC_BROWSER_APP_PERF: 'BrowserAppPerf';

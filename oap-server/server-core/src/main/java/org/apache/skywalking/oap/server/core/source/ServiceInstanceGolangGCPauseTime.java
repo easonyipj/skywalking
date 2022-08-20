@@ -4,14 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 import static org.apache.skywalking.oap.server.core.source.DefaultScopeDefine.SERVICE_INSTANCE_CATALOG_NAME;
-import static org.apache.skywalking.oap.server.core.source.DefaultScopeDefine.SERVICE_INSTANCE_GOLANG_HEAP;
+import static org.apache.skywalking.oap.server.core.source.DefaultScopeDefine.SERVICE_INSTANCE_GOLANG_GC_PAUSE_TIME;
 
-@ScopeDeclaration(id = SERVICE_INSTANCE_GOLANG_HEAP, name = "ServiceInstanceGolangHeap", catalog = SERVICE_INSTANCE_CATALOG_NAME)
+@ScopeDeclaration(id = SERVICE_INSTANCE_GOLANG_GC_PAUSE_TIME, name = "ServiceInstanceGolangGCPauseTime", catalog = SERVICE_INSTANCE_CATALOG_NAME)
 @ScopeDefaultColumn.VirtualColumnDefinition(fieldName = "entityId", columnName = "entity_id", isID = true, type = String.class)
-public class ServiceInstanceGolangHeap  extends Source {
+public class ServiceInstanceGolangGCPauseTime extends Source {
     @Override
     public int scope() {
-        return DefaultScopeDefine.SERVICE_INSTANCE_GOLANG_HEAP;
+        return DefaultScopeDefine.SERVICE_INSTANCE_GOLANG_GC_PAUSE_TIME;
     }
 
     @Override
@@ -36,6 +36,5 @@ public class ServiceInstanceGolangHeap  extends Source {
     private String serviceId;
     @Getter
     @Setter
-    private long used;
+    private long time;
 }
-

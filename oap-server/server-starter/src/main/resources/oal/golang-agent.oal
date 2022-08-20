@@ -18,3 +18,10 @@
 
 // Golang instance metrics
 instance_golang_stack = from(ServiceInstanceGolangStack.used).longAvg();
+instance_golang_heap = from(ServiceInstanceGolangHeap.used).longAvg();
+instance_golang_gc_num = from(ServiceInstanceGolangGCNum.num).longAvg();
+instance_golang_gc_pause_time = from(ServiceInstanceGolangGCPauseTime.time).longAvg();
+instance_golang_goroutine_num = from(ServiceInstanceGolangGoroutineNum.num).longAvg();
+instance_golang_thread_num = from(ServiceInstanceGolangThreadNum.num).longAvg();
+instance_golang_cpu_used_rate = from(ServiceInstanceGolangCPUUsedRate.usedRate).doubleAvg();
+instance_golang_mem_used_rate = from(ServiceInstanceGolangMemUsedRate.usedRate).doubleAvg();

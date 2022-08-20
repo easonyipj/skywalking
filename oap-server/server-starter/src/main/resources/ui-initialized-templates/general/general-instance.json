@@ -569,14 +569,45 @@
               "name": "Golang",
               "children": [
                 {
-                  "x": 18,
+                  "x": 0,
                   "y": 0,
-                  "w": 6,
+                  "w": 8,
                   "h": 13,
-                  "i": "4",
+                  "i": "5",
                   "type": "Widget",
                   "widget": {
-                    "title": "Stack Used（Bytes）"
+                    "title": "Heap Memory (MB)"
+                  },
+                  "graph": {
+                    "type": "Line",
+                    "step": false,
+                    "smooth": false,
+                    "showSymbol": false,
+                    "showXAxis": true,
+                    "showYAxis": true
+                  },
+                  "metrics": [
+                    "instance_golang_heap"
+                  ],
+                  "metricTypes": [
+                    "readMetricsValues"
+                  ],
+                  "metricConfig": [
+                    {
+                      "calculation": "byteToMB"
+                    }
+                  ],
+                  "moved": false
+                },
+                {
+                  "x": 8,
+                  "y": 0,
+                  "w": 8,
+                  "h": 13,
+                  "i": "5",
+                  "type": "Widget",
+                  "widget": {
+                    "title": "Stack Memory (MB)"
                   },
                   "graph": {
                     "type": "Line",
@@ -588,6 +619,167 @@
                   },
                   "metrics": [
                     "instance_golang_stack"
+                  ],
+                  "metricTypes": [
+                    "readMetricsValues"
+                  ],
+                  "metricConfig": [
+                    {
+                      "calculation": "byteToMB"
+                    }
+                  ],
+                  "moved": false
+                },
+                {
+                  "x": 16,
+                  "y": 0,
+                  "w": 8,
+                  "h": 13,
+                  "i": "5",
+                  "type": "Widget",
+                  "widget": {
+                    "title": "Golang GC Time (ms)"
+                  },
+                  "graph": {
+                    "type": "Line",
+                    "step": false,
+                    "smooth": false,
+                    "showSymbol": false,
+                    "showXAxis": true,
+                    "showYAxis": true
+                  },
+                  "metrics": [
+                    "instance_golang_gc_pause_time"
+                  ],
+                  "metricTypes": [
+                    "readMetricsValues"
+                  ],
+                  "moved": false
+                },
+                {
+                  "x": 0,
+                  "y": 13,
+                  "w": 8,
+                  "h": 13,
+                  "i": "5",
+                  "type": "Widget",
+                  "widget": {
+                    "title": "Golang GC Count"
+                  },
+                  "graph": {
+                    "type": "Line",
+                    "step": false,
+                    "smooth": false,
+                    "showSymbol": false,
+                    "showXAxis": true,
+                    "showYAxis": true
+                  },
+                  "metrics": [
+                    "instance_golang_gc_num"
+                  ],
+                  "metricTypes": [
+                    "readMetricsValues"
+                  ],
+                  "moved": false
+                },
+                {
+                  "x": 8,
+                  "y": 13,
+                  "w": 8,
+                  "h": 13,
+                  "i": "5",
+                  "type": "Widget",
+                  "widget": {
+                    "title": "Goroutine Nums"
+                  },
+                  "graph": {
+                    "type": "Line",
+                    "step": false,
+                    "smooth": false,
+                    "showSymbol": false,
+                    "showXAxis": true,
+                    "showYAxis": true
+                  },
+                  "metrics": [
+                    "instance_golang_goroutine_num"
+                  ],
+                  "metricTypes": [
+                    "readMetricsValues"
+                  ],
+                  "moved": false
+                },
+                {
+                  "x": 16,
+                  "y": 13,
+                  "w": 8,
+                  "h": 13,
+                  "i": "5",
+                  "type": "Widget",
+                  "widget": {
+                    "title": "Thread Nums"
+                  },
+                  "graph": {
+                    "type": "Line",
+                    "step": false,
+                    "smooth": false,
+                    "showSymbol": false,
+                    "showXAxis": true,
+                    "showYAxis": true
+                  },
+                  "metrics": [
+                    "instance_golang_thread_num"
+                  ],
+                  "metricTypes": [
+                    "readMetricsValues"
+                  ],
+                  "moved": false
+                },
+                {
+                  "x": 0,
+                  "y": 26,
+                  "w": 8,
+                  "h": 13,
+                  "i": "5",
+                  "type": "Widget",
+                  "widget": {
+                    "title": "Host CPU used rate"
+                  },
+                  "graph": {
+                    "type": "Line",
+                    "step": false,
+                    "smooth": false,
+                    "showSymbol": false,
+                    "showXAxis": true,
+                    "showYAxis": true
+                  },
+                  "metrics": [
+                    "instance_golang_cpu_used_rate"
+                  ],
+                  "metricTypes": [
+                    "readMetricsValues"
+                  ],
+                  "moved": false
+                },
+                {
+                  "x": 8,
+                  "y": 26,
+                  "w": 8,
+                  "h": 13,
+                  "i": "5",
+                  "type": "Widget",
+                  "widget": {
+                    "title": "Host Memory used rate"
+                  },
+                  "graph": {
+                    "type": "Line",
+                    "step": false,
+                    "smooth": false,
+                    "showSymbol": false,
+                    "showXAxis": true,
+                    "showYAxis": true
+                  },
+                  "metrics": [
+                    "instance_golang_mem_used_rate"
                   ],
                   "metricTypes": [
                     "readMetricsValues"
