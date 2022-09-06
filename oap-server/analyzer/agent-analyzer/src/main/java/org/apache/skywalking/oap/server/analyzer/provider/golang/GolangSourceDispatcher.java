@@ -4,7 +4,15 @@ import org.apache.skywalking.apm.network.language.agent.v3.GolangMetric;
 import org.apache.skywalking.oap.server.core.CoreModule;
 import org.apache.skywalking.oap.server.core.analysis.IDManager;
 import org.apache.skywalking.oap.server.core.analysis.TimeBucket;
-import org.apache.skywalking.oap.server.core.source.*;
+import org.apache.skywalking.oap.server.core.source.SourceReceiver;
+import org.apache.skywalking.oap.server.core.source.ServiceInstanceGolangStack;
+import org.apache.skywalking.oap.server.core.source.ServiceInstanceGolangHeap;
+import org.apache.skywalking.oap.server.core.source.ServiceInstanceGolangGCNum;
+import org.apache.skywalking.oap.server.core.source.ServiceInstanceGolangGCTime;
+import org.apache.skywalking.oap.server.core.source.ServiceInstanceGolangThreadNum;
+import org.apache.skywalking.oap.server.core.source.ServiceInstanceGolangGoroutineNum;
+import org.apache.skywalking.oap.server.core.source.ServiceInstanceGolangCPUUsedRate;
+import org.apache.skywalking.oap.server.core.source.ServiceInstanceGolangMemUsedRate;
 import org.apache.skywalking.oap.server.library.module.ModuleManager;
 
 public class GolangSourceDispatcher {
@@ -74,7 +82,7 @@ public class GolangSourceDispatcher {
         serviceInstanceGolangGcNum.setServiceId(serviceId);
         serviceInstanceGolangGcNum.setServiceName(service);
         serviceInstanceGolangGcNum.setTimeBucket(timeBucket);
-        serviceInstanceGolangGcNum.setNum(num);
+        serviceInstanceGolangGcNum.setCount(num);
         this.sourceReceiver.receive(serviceInstanceGolangGcNum);
     }
 
@@ -84,13 +92,13 @@ public class GolangSourceDispatcher {
                                     String serviceInstanceId,
                                     long timeBucket,
                                     long time) {
-        ServiceInstanceGolangGCPauseTime serviceInstanceGolangGcPauseTime = new ServiceInstanceGolangGCPauseTime();
+        ServiceInstanceGolangGCTime serviceInstanceGolangGcPauseTime = new ServiceInstanceGolangGCTime();
         serviceInstanceGolangGcPauseTime.setId(serviceInstanceId);
         serviceInstanceGolangGcPauseTime.setName(serviceInstance);
         serviceInstanceGolangGcPauseTime.setServiceId(serviceId);
         serviceInstanceGolangGcPauseTime.setServiceName(service);
         serviceInstanceGolangGcPauseTime.setTimeBucket(timeBucket);
-        serviceInstanceGolangGcPauseTime.setTime(time);
+        serviceInstanceGolangGcPauseTime.setPauseTime(time);
         this.sourceReceiver.receive(serviceInstanceGolangGcPauseTime);
     }
 

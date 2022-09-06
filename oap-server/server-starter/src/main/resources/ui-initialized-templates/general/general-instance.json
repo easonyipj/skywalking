@@ -573,7 +573,7 @@
                   "y": 0,
                   "w": 8,
                   "h": 13,
-                  "i": "5",
+                  "i": "15",
                   "type": "Widget",
                   "widget": {
                     "title": "Heap Memory (MB)"
@@ -604,7 +604,7 @@
                   "y": 0,
                   "w": 8,
                   "h": 13,
-                  "i": "5",
+                  "i": "16",
                   "type": "Widget",
                   "widget": {
                     "title": "Stack Memory (MB)"
@@ -635,7 +635,7 @@
                   "y": 0,
                   "w": 8,
                   "h": 13,
-                  "i": "5",
+                  "i": "17",
                   "type": "Widget",
                   "widget": {
                     "title": "Golang GC Time (ms)"
@@ -649,7 +649,12 @@
                     "showYAxis": true
                   },
                   "metrics": [
-                    "instance_golang_gc_pause_time"
+                    "instance_golang_gc_time"
+                  ],
+                  "metricConfig": [
+                    {
+                      "calculation": "nanoToMill"
+                    }
                   ],
                   "metricTypes": [
                     "readMetricsValues"
@@ -661,18 +666,14 @@
                   "y": 13,
                   "w": 8,
                   "h": 13,
-                  "i": "5",
+                  "i": "18",
                   "type": "Widget",
                   "widget": {
                     "title": "Golang GC Count"
                   },
                   "graph": {
-                    "type": "Line",
-                    "step": false,
-                    "smooth": false,
-                    "showSymbol": false,
-                    "showXAxis": true,
-                    "showYAxis": true
+                    "type": "Bar",
+                    "showBackground": true
                   },
                   "metrics": [
                     "instance_golang_gc_num"
@@ -687,7 +688,7 @@
                   "y": 13,
                   "w": 8,
                   "h": 13,
-                  "i": "5",
+                  "i": "19",
                   "type": "Widget",
                   "widget": {
                     "title": "Goroutine Nums"
@@ -713,7 +714,7 @@
                   "y": 13,
                   "w": 8,
                   "h": 13,
-                  "i": "5",
+                  "i": "20",
                   "type": "Widget",
                   "widget": {
                     "title": "Thread Nums"
@@ -739,10 +740,10 @@
                   "y": 26,
                   "w": 8,
                   "h": 13,
-                  "i": "5",
+                  "i": "21",
                   "type": "Widget",
                   "widget": {
-                    "title": "Host CPU used rate"
+                    "title": "Host CPU used rate(%)"
                   },
                   "graph": {
                     "type": "Line",
@@ -765,10 +766,10 @@
                   "y": 26,
                   "w": 8,
                   "h": 13,
-                  "i": "5",
+                  "i": "22",
                   "type": "Widget",
                   "widget": {
-                    "title": "Host Memory used rate"
+                    "title": "Host Memory used rate(%)"
                   },
                   "graph": {
                     "type": "Line",

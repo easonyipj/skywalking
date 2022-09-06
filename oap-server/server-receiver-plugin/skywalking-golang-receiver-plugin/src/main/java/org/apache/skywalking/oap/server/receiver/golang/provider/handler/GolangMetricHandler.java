@@ -11,13 +11,11 @@ import org.apache.skywalking.oap.server.core.config.NamingControl;
 import org.apache.skywalking.oap.server.library.module.ModuleManager;
 import org.apache.skywalking.oap.server.library.server.grpc.GRPCHandler;
 
-
 @Slf4j
 public class GolangMetricHandler extends GolangMetricReportServiceGrpc.GolangMetricReportServiceImplBase implements GRPCHandler {
 
     private final GolangSourceDispatcher golangSourceDispatcher;
     private final NamingControl namingControl;
-
 
     public GolangMetricHandler(ModuleManager moduleManager) {
         this.golangSourceDispatcher = new GolangSourceDispatcher(moduleManager);
@@ -25,6 +23,7 @@ public class GolangMetricHandler extends GolangMetricReportServiceGrpc.GolangMet
                 .provider()
                 .getService(NamingControl.class);
     }
+
     @Override
     public void collect(GolangMetricCollection request, StreamObserver<Commands> responseObserver) {
         log.info(request.toString());

@@ -1,4 +1,5 @@
 package org.apache.skywalking.oap.server.receiver.golang.module;
+
 import org.apache.skywalking.oap.server.library.module.ModuleDefine;
 
 public class GolangModule extends ModuleDefine {

@@ -36,5 +36,5 @@ public class ServiceInstanceGolangGCNum extends Source {
     private String serviceId;
     @Getter
     @Setter
-    private long num;
+    private long count;
 }

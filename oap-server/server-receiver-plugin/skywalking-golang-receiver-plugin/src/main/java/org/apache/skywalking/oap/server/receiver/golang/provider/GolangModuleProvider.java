@@ -1,11 +1,12 @@
 package org.apache.skywalking.oap.server.receiver.golang.provider;
 
-import org.apache.skywalking.oap.server.analyzer.provider.golang.GolangSourceDispatcher;
 import org.apache.skywalking.oap.server.core.CoreModule;
-import org.apache.skywalking.oap.server.core.config.NamingControl;
 import org.apache.skywalking.oap.server.core.oal.rt.OALEngineLoaderService;
 import org.apache.skywalking.oap.server.core.server.GRPCHandlerRegister;
-import org.apache.skywalking.oap.server.library.module.*;
+import org.apache.skywalking.oap.server.library.module.ModuleProvider;
+import org.apache.skywalking.oap.server.library.module.ModuleDefine;
+import org.apache.skywalking.oap.server.library.module.ModuleConfig;
+import org.apache.skywalking.oap.server.library.module.ModuleStartException;
 import org.apache.skywalking.oap.server.receiver.golang.module.GolangModule;
 import org.apache.skywalking.oap.server.receiver.golang.provider.handler.GolangMetricHandler;
 import org.apache.skywalking.oap.server.receiver.sharing.server.SharingServerModule;
