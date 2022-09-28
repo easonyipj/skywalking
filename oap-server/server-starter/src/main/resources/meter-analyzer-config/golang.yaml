@@ -22,8 +22,8 @@ metricsRules:
     exp: instance_golang_stack
   - name: instance_golang_gc_time
     exp: instance_golang_gc_time
-  - name: instance_golang_gc_num
-    exp: instance_golang_gc_num.max(['service', 'instance'])
+  - name: instance_golang_gc_count
+    exp: instance_golang_gc_count.increase('PT1M')
   - name: instance_golang_thread_num
     exp: instance_golang_thread_num
   - name: instance_golang_goroutine_num

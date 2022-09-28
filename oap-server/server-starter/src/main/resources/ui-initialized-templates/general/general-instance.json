@@ -676,7 +676,7 @@
                     "showBackground": true
                   },
                   "metrics": [
-                    "meter_instance_golang_gc_num"
+                    "meter_instance_golang_gc_count"
                   ],
                   "metricTypes": [
                     "readMetricsValues"
