@@ -50,6 +50,20 @@
 * [**Breaking Change**] Limit the max length of trace/log/alarm tag's `key=value`, set the max length of column `tags`
   in tables`log_tag/segment_tag/alarm_record_tag` and column `query` in `zipkin_query` and column `tag_value` in `tag_autocomplete` to 256.
   SQL-Database requires altering these columns' length or removing these tables before OAP starts, if bump up from previous releases.
+* Optimize the creation conditions of profiling task.
+* Lazy load the Kubernetes metadata and switch from event-driven to polling.
+  Previously we set up watchers to watch the Kubernetes metadata changes, this is perfect when there are deployments changes and
+  SkyWalking can react to the changes in real time. However when the cluster has many events (such as in large cluster
+  or some special Kubernetes engine like OpenShift), the requests sent from SkyWalking becomes unpredictable, i.e. SkyWalking might
+  send massive requests to Kubernetes API server, causing heavy load to the API server.
+  This PR switches from the watcher mechanism to polling mechanism, SkyWalking polls the metadata in a specified interval,
+  so that the requests sent to API server is predictable (~10 requests every `interval`, 3 minutes), and the requests count is constant
+  regardless of the cluster's changes. However with this change SkyWalking can't react to the cluster changes in time, but the delay
+  is acceptable in our case.
+* Optimize the query time of tasks in ProfileTaskCache.
+* Fix metrics was put into wrong slot of the window in the alerting kernel.
+* Support `sumPerMinLabeled` in `MAL`.
+* Support export `Trace` and `Log` through Kafka.
 
 #### UI
 
@@ -84,6 +98,8 @@
 * Move general good read blogs from `Agent Introduction` to `Academy`.
 * Add re-post for blog `Scaling with Apache SkyWalking` in the academy list.
 * Add re-post for blog `Diagnose Service Mesh Network Performance with eBPF` in the academy list.
-* Add **Security Notice** doc. 
+* Add **Security Notice** doc.
+* Add new docs for `Report Span Attached Events` data collecting protocol.
+* Add new docs for `Record` query protocol
 
 All issues and pull requests are [here](https://github.com/apache/skywalking/milestone/149?closed=1)

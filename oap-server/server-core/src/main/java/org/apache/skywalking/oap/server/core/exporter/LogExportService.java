@@ -16,13 +16,15 @@
  *
  */
 
-package org.apache.skywalking.oap.meter.analyzer.k8s;
+package org.apache.skywalking.oap.server.core.exporter;
 
-public class Kubernetes {
-    /**
-     * Start the listen the kubernetes metadata
-     */
-    public static void startMetadataListener() {
-        K8sInfoRegistry.getInstance().start();
-    }
+import org.apache.skywalking.oap.server.core.analysis.manual.log.LogRecord;
+import org.apache.skywalking.oap.server.library.module.Service;
+
+/**
+ * Export the log from metrics through this service.
+ */
+public interface LogExportService extends Service, ExporterService<LogRecord> {
+
+    void export(LogRecord logRecord);
 }

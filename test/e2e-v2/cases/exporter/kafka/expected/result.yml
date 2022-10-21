@@ -13,7 +13,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-{{- contains . }}
-- key: {{ notEmpty .key }}
-  value: {{ ge .value 1 }}
-{{- end }} 
+# "1" represents all received traces/logs were exported successfully: {exported  / received == 1 }
+result: 1
